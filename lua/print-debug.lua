@@ -27,7 +27,6 @@ function M.config(user_config)
     end
   end
   c = vim.tbl_deep_extend('force', c, user_config)
-  vim.pretty_print(c)
 end
 
 M.current = {}
@@ -64,7 +63,7 @@ function M.add()
   vim.cmd [[normal! j]]
 end
 
----Search print debug strings using vim regex.
+---Search print-debug code using vim regex.
 ---@param vim_regex string
 ---@return number|nil
 local function search(vim_regex)
