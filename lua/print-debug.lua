@@ -80,7 +80,8 @@ function M.clear()
     err_no_templates()
     return
   end
-  local vim_regex = template:gsub('{}', [[\a\{]] .. c.repeat_count .. [[\}]])
+  local vim_regex =
+    template:gsub(c.placeholder, [[\a\{]] .. c.repeat_count .. [[\}]])
   vim_regex = [[^\s*]] .. vim_regex .. [[\s*$]]
   local row_num = search(vim_regex)
   while row_num do
