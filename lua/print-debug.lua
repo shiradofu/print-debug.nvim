@@ -74,7 +74,7 @@ local function search(vim_regex)
 end
 
 ---Delete all print-debug codes.
-function M.delete()
+function M.clear()
   local ft = vim.bo.ft
   local template = c.templates[ft]
   if not template then
